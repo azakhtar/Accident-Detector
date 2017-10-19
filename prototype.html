@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<!-- Referencing the CSS and JS files -->
+<link rel="stylesheet" href="prototype.css">
+<script src="prototype.js"></script>
+</head>
+
+<body>
+<h1 id="systemState">Pedestrian Backup System</h1>
+<!-- Following is the ENABLED/DISABLED button -->
+<button type="button" id="powerButton" onclick="pbsPower()"><b>SYSTEM POWER</b></button>
+<br>
+<br>
+
+<!-- Following is start point for pikachu -->
+<div id="startPoint" ondrop="drop(event)" ondragover="allowDrop(event)">
+<img id="drag1" src="stickfigure.png" draggable="true" ondragstart="drag(event)" width="100" height="100" >
+</div>
+
+<!-- Following are the detection zones of the PBS
+    -------------------------------------------------
+    |  greenzZone1  |  greenZone2   |  greenZone3   |
+    -------------------------------------------------
+    | warningZone1  | warningZone2  |  warningZone3 |
+    -------------------------------------------------
+    | criticalZone1 | criticalZone2 | criticalZone3 |
+    -------------------------------------------------
+                     REAR END OF VEHICLE
+-->
+
+<table class="centerFormattedTable">
+  <tr>
+    <td id="heading1" class="zone1"><font size="8" style="bold">Left Detection Zone</font></td>
+    <td id="heading2" class="zone1"><font size="8" style="bold">Critical Area</font></td>
+    <td id="heading3" class="zone1"><font size="8" style="bold">Right Detection Zone</font></td>
+  </tr>
+  <tr>
+    <td id="greenZone1" class="zone1" ondrop="drop(event)" ondragover="allowDrop(event)">2-3m</td>
+    <td id="greenZone2" class="zone1" ondrop="drop(event)" ondragover="allowDrop(event)">2-3m</td>
+    <td id="greenZone3" class="zone1" ondrop="drop(event)" ondragover="allowDrop(event)">2-3m</td>
+  </tr>
+  <tr>
+    <td id="warningZone1" class="zone2 "ondrop="drop(event)" ondragover="allowDrop(event)">1-2m</td>
+    <td id="warningZone2" class="zone2" ondrop="drop(event)" ondragover="allowDrop(event)">1-2m</td>
+    <td id="warningZone3" class="zone2" ondrop="drop(event)" ondragover="allowDrop(event)">1-2m</td>
+  </tr>
+  <tr>
+    <td id="criticalZone1" class="zone3 "ondrop="drop(event)" ondragover="allowDrop(event)">0-1m</td>
+    <td id="criticalZone2" class="zone3" ondrop="drop(event)" ondragover="allowDrop(event)">0-1m</td>
+    <td id="criticalZone3" class="zone3" ondrop="drop(event)" ondragover="allowDrop(event)">0-1m</td>
+  </tr>
+</table>
+<br>
+
+<!-- Following is the car centered in the middle of the page -->
+<img src="car.png" class="car" alt="Mountain View">
+<br>
+
+<!-- Following is the warning panel with LED, BUZZER & BRAKE warnings -->
+<table class="centerFormattedTable">
+  <tr>
+    <td id="buzzer" class="alerts"><font size="20">DRIVER AUDIO</font></td>
+    <td id="ledBar" class="alerts"><font size="20">LED BAR</font></td>
+    <td id="brakes" class="alerts"><font size="20">BRAKES</font></td>
+  </tr>
+</body>
+
+</html>
